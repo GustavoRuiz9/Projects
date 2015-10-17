@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="675" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jPanel1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel1" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+              <Component id="jButton2" min="-2" pref="46" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="jLabel1" pref="31" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="678" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="570" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="jTable1">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="4" rowCount="33">
+                <Column editable="true" title="N&#xba;" type="java.lang.Object">
+                  <Data value="1"/>
+                  <Data value="2"/>
+                  <Data value="3"/>
+                  <Data value="4"/>
+                  <Data value="5"/>
+                  <Data value="6"/>
+                  <Data value="7"/>
+                  <Data value="8"/>
+                  <Data value="9"/>
+                  <Data value="10"/>
+                  <Data value="11"/>
+                  <Data value="12"/>
+                  <Data value="13"/>
+                  <Data value="14"/>
+                  <Data value="15"/>
+                  <Data value="16"/>
+                  <Data value="17"/>
+                  <Data value="18"/>
+                  <Data value="19"/>
+                  <Data value="20"/>
+                  <Data value="21"/>
+                  <Data value="22"/>
+                  <Data value="23"/>
+                  <Data value="24"/>
+                  <Data value="25"/>
+                  <Data value="26"/>
+                  <Data value="27"/>
+                  <Data value="28"/>
+                  <Data value="29"/>
+                  <Data value="30"/>
+                  <Data value="31"/>
+                  <Data value="32"/>
+                  <Data value="33"/>
+                </Column>
+                <Column editable="true" title="Caracteristica" type="java.lang.Object">
+                  <Data value="MF"/>
+                  <Data value="MR "/>
+                  <Data value="PC"/>
+                  <Data value="Multi"/>
+                  <Data value="3GL"/>
+                  <Data value="4GL"/>
+                  <Data value="GenAp"/>
+                  <Data value="Mantenimiento"/>
+                  <Data value="Nuevo"/>
+                  <Data value="MF-3GL"/>
+                  <Data value="MF-4GL"/>
+                  <Data value="MF-GenAp"/>
+                  <Data value="MR-3GL"/>
+                  <Data value="MR-4GL"/>
+                  <Data value="PC-3GL"/>
+                  <Data value="PC-4GL"/>
+                  <Data value="Multi 3GL"/>
+                  <Data value="Multi 4GL"/>
+                  <Data value="MF-3GL-Mantenimiento"/>
+                  <Data value="MF-3GL-Nuevo"/>
+                  <Data value="MF-4GL-Mantenimiento"/>
+                  <Data value="MF-4GL-Nuevo"/>
+                  <Data value="MF-GenAp-Nuevo"/>
+                  <Data value="MR-3GL-Mantenimiento"/>
+                  <Data value="MR-3GL-Nuevo"/>
+                  <Data value="MR-4GL-Mantenimiento"/>
+                  <Data value="PC-3GL-Mantenimiento"/>
+                  <Data value="PC-3GL-Nuevo"/>
+                  <Data value="PC-4GL-Mantenimiento"/>
+                  <Data value="PC-4GL-Nuevo"/>
+                  <Data value="Multi-3GL-Mantenimiento"/>
+                  <Data value="Multi-3GL-Nuevo"/>
+                  <Data value="Multi-4GL-Mantenimiento"/>
+                </Column>
+                <Column editable="true" title="C" type="java.lang.Object">
+                  <Data value="49.02"/>
+                  <Data value="78.88"/>
+                  <Data value="48.9"/>
+                  <Data value="16.01"/>
+                  <Data value="54.65"/>
+                  <Data value="29.5"/>
+                  <Data value="68.11"/>
+                  <Data value="52.58"/>
+                  <Data value="39.05"/>
+                  <Data value="65.37"/>
+                  <Data value="52.09"/>
+                  <Data value="65.68"/>
+                  <Data value="126.3"/>
+                  <Data value="62.53"/>
+                  <Data value="60.46"/>
+                  <Data value="36.48"/>
+                  <Data value="19.82"/>
+                  <Data value="6.49"/>
+                  <Data value="83.27"/>
+                  <Data value="59.21"/>
+                  <Data value="69.37"/>
+                  <Data value="102.8"/>
+                  <Data value="65.68"/>
+                  <Data value="123.2"/>
+                  <Data value="81.36"/>
+                  <Data value="96.31"/>
+                  <Data value="83.66"/>
+                  <Data value="48.6"/>
+                  <Data value="29.84"/>
+                  <Data value="42.58"/>
+                  <Data value="5.05"/>
+                  <Data value="58.16"/>
+                  <Data value="115.8"/>
+                </Column>
+                <Column editable="true" title="E" type="java.lang.Object">
+                  <Data value="0.736"/>
+                  <Data value="0.646"/>
+                  <Data value="0.661"/>
+                  <Data value="0.865"/>
+                  <Data value="0.717"/>
+                  <Data value="0.759"/>
+                  <Data value="0.66"/>
+                  <Data value="0.683"/>
+                  <Data value="0.731"/>
+                  <Data value="0.705"/>
+                  <Data value="0.64"/>
+                  <Data value="0.692"/>
+                  <Data value="0.565"/>
+                  <Data value="0.694"/>
+                  <Data value="0.648"/>
+                  <Data value="0.694"/>
+                  <Data value="0.666"/>
+                  <Data value="0.983"/>
+                  <Data value="0.65"/>
+                  <Data value="0.745"/>
+                  <Data value="0.538"/>
+                  <Data value="0.546"/>
+                  <Data value="0.692"/>
+                  <Data value="0.585"/>
+                  <Data value="0.623"/>
+                  <Data value="0.616"/>
+                  <Data value="0.528"/>
+                  <Data value="0.699"/>
+                  <Data value="0.731"/>
+                  <Data value="0.668"/>
+                  <Data value="1.135"/>
+                  <Data value="0.664"/>
+                  <Data value="0.45"/>
+                </Column>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="66" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="PARAMETROS ESTIMACION ESFUERZO"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="C"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="E"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
