@@ -1,0 +1,34 @@
+INTRODUCCION
+PROBLEMA DE INVESTIGACION
+	Planteamiento del Problema
+	Formulacion del Problema
+	Sistematizacion del Problema
+OBJETIVOS
+	Objetivo General
+	Objetivo Especifico
+JUSTIFICACION
+MARCO REFERENCIAL
+	Antecedentes
+	Marco Contextual
+	Marco Teorico
+	Marco Conceptual
+	Marco Legal
+METODOLOGIA
+
+	DESARROLLO DEL PROYECTO
+ANALISIS DEL SISTEMA
+REQUERIMIENTOS
+	Listado de Requerimientos Funcionales
+	Listado de Requerimientos No Funcionales
+	Especificacion de requerimientos Funcionales
+DISEÑO
+	Diagrama de clases
+	Diagrama de secuencia
+	Modelamiento Base de Datos
+IMPLEMENTACION
+	Aspectos Generales
+	Base de datos
+	Aplicacion
+CONCLUSIONES Y RECOMENDACIONES
+BIBLIOGRAFIA
+ANEXOS

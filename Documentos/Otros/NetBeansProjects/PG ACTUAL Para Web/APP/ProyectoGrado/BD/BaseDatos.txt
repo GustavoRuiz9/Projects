@@ -1,0 +1,286 @@
+﻿/*================================================================================*/
+/* DDL SCRIPT..                                                                  */
+/*================================================================================*/
+/*  Title    :                                                                    */
+/*  FileName : ULTIMO - New Model.ecm                                             */
+/*  Platform : MySQL 4                                                            */
+/*  Version  : Concept                                                            */
+/*  Date     : domingo, 21 de julio de 2013                                       */
+/*================================================================================*/
+/*================================================================================*/
+/* CREATE TABLES                                                                  */
+/*================================================================================*/
+
+CREATE TABLE CATEGORIA_PROYECTO (
+  codigo_cat NUMBER NOT NULL,
+  nivel NUMBER NOT NULL,
+  descripcion VARCHAR(40) NOT NULL,
+  CONSTRAINT PK_CATEGORIA_PROYECTO PRIMARY KEY (codigo_cat)
+);
+
+CREATE TABLE CLIENTE (
+  codigo_cliente NUMBER NOT NULL,
+  cedula VARCHAR(40) NOT NULL unique,
+  nombre VARCHAR(40) NOT NULL,
+  apellido VARCHAR(40) NOT NULL,
+  sexo VARCHAR(40) NOT NULL,
+  ciudad NUMBER NOT NULL,
+  telefono VARCHAR(40) NOT NULL,
+  correo VARCHAR(80) NOT NULL,
+  nom_empresa VARCHAR(40),
+  nit_empresa VARCHAR(40),
+  CONSTRAINT PK_CLIENTE PRIMARY KEY (codigo_cliente)
+);
+
+CREATE TABLE PROYECTO (
+  codigo_proy NUMBER NOT NULL,
+  cant_personas NUMBER NOT NULL,
+  est_cant_pers NUMBER,
+  num_entregas NUMBER NOT NULL,
+  titulo VARCHAR(40) NOT NULL,
+  categoria NUMBER NOT NULL,
+  cliente NUMBER NOT NULL, 
+  fecha_inicio DATE NOT NULL,
+  fecha_fin DATE NOT NULL,
+  fecha_fin_real DATE,
+  valor_estimado NUMBER (20,2) NOT NULL,
+  valor_final NUMBER (20,2) NOT NULL,
+  estado VARCHAR(40) NOT NULL,
+  rangopf VARCHAR(100) NOT NULL,
+  CONSTRAINT PK_PROYECTO PRIMARY KEY (codigo_proy)
+);
+
+CREATE TABLE ENTREGA (
+  codigo_entrega NUMBER NOT NULL,
+  titulo VARCHAR(40) NOT NULL,
+  porcentaje NUMBER NOT NULL,
+  proyecto NUMBER NOT NULL,
+  fecha_inicio DATE NOT NULL,
+  fecha_fin DATE NOT NULL,
+  fecha_fin_real DATE,
+  estado VARCHAR(40) NOT NULL,
+  valor NUMBER (20,2) NOT NULL,
+  CONSTRAINT PK_ENTREGA PRIMARY KEY (codigo_entrega)
+);
+
+CREATE TABLE DEPARTAMENTO (
+  codigo_depart NUMBER NOT NULL,
+  nombre_depart VARCHAR(40) NOT NULL,
+  CONSTRAINT PK_DEPARTAMENTO PRIMARY KEY (codigo_depart)
+);
+
+CREATE TABLE CIUDAD (
+  codigo_ciudad NUMBER NOT NULL,
+  nombre_ciudad VARCHAR(40) NOT NULL,
+  departamento NUMBER NOT NULL,
+  CONSTRAINT PK_CIUDAD PRIMARY KEY (codigo_ciudad)
+);
+
+CREATE TABLE PERSONAL (
+  codigo_personal NUMBER NOT NULL,
+  cedula VARCHAR(40) NOT NULL unique,
+  nombre VARCHAR(40) NOT NULL,
+  apellido VARCHAR(40) NOT NULL,
+  telefono VARCHAR(40),
+  celular VARCHAR(40) NOT NULL,
+  correo VARCHAR(40) NOT NULL,
+  edad NUMBER,
+  direccion VARCHAR(40) NOT NULL,
+  codigo_ciudad NUMBER NOT NULL,
+  cuenta_Activa VARCHAR (8) NOT NULL,
+  CONSTRAINT PK_PERSONAL PRIMARY KEY (codigo_personal)
+);
+
+CREATE TABLE ACTIVIDAD (
+  codigo_actividad NUMBER NOT NULL,
+  titulo VARCHAR(40) NOT NULL,
+  entrega NUMBER NOT NULL,
+  fecha_ini DATE NOT NULL,
+  fecha_fin DATE NOT NULL,
+  fecha_fin_real DATE,
+  estado VARCHAR(40) NOT NULL,
+  responsable NUMBER NOT NULL,
+  CONSTRAINT PK_ACTIVIDAD PRIMARY KEY (codigo_actividad)
+);
+
+CREATE TABLE OBSERVACION (
+  codigo_proy NUMBER NOT NULL,
+  descripcion VARCHAR(250) NOT NULL,
+  vr_definitivo NUMBER (20,2) NOT NULL,
+  CONSTRAINT PK_OBSERVACION PRIMARY KEY (codigo_proy)
+);
+
+CREATE TABLE ROL_ESP (
+  codigo_rol NUMBER NOT NULL,
+  nombre_rol VARCHAR(40) NOT NULL,
+  vr_hora NUMBER (12,2) NOT NULL,
+  CONSTRAINT PK_ROL_ESP PRIMARY KEY (codigo_rol)
+);
+
+CREATE TABLE ROLxENT_PER (
+  personal NUMBER NOT NULL,
+  estado VARCHAR(40) NOT NULL,
+  entrega NUMBER NOT NULL,
+  rol NUMBER NOT NULL,
+  CONSTRAINT PK_ROLxENT_PER PRIMARY KEY (personal, entrega)
+);
+
+CREATE TABLE CUENTA (
+  personal NUMBER NOT NULL,
+  nombre_usuario VARCHAR(40) NOT NULL,
+  contrasena VARCHAR(80) NOT NULL,
+  CONSTRAINT PK_CUENTA PRIMARY KEY (personal)
+);
+
+/*================================================================================*/
+/* CREATE FOREIGN KEYS                                                            */
+/*================================================================================*/
+
+ALTER TABLE CLIENTE
+  ADD CONSTRAINT FK_CLIENTE_CIUDAD
+  FOREIGN KEY (ciudad) REFERENCES CIUDAD (codigo_ciudad);
+
+ALTER TABLE PROYECTO
+  ADD CONSTRAINT FK_PROYECTO_CATEGORIA_PROYECTO
+  FOREIGN KEY (categoria) REFERENCES CATEGORIA_PROYECTO (codigo_cat);
+
+ALTER TABLE PROYECTO
+  ADD CONSTRAINT FK_PROYECTO_CLIENTE
+  FOREIGN KEY (cliente) REFERENCES CLIENTE (codigo_cliente);
+
+ALTER TABLE ENTREGA
+  ADD CONSTRAINT FK_ENTREGA_PROYECTO
+  FOREIGN KEY (proyecto) REFERENCES PROYECTO (codigo_proy);
+
+ALTER TABLE CIUDAD
+  ADD CONSTRAINT FK_CIUDAD_DEPARTAMENTO
+  FOREIGN KEY (departamento) REFERENCES DEPARTAMENTO (codigo_depart);
+
+ALTER TABLE PERSONAL
+  ADD CONSTRAINT FK_PERSONAL_CIUDAD
+  FOREIGN KEY (codigo_ciudad) REFERENCES CIUDAD (codigo_ciudad);
+
+ALTER TABLE ACTIVIDAD
+  ADD CONSTRAINT FK_ACTIVIDAD_ENTREGA
+  FOREIGN KEY (entrega) REFERENCES ENTREGA (codigo_entrega);
+
+ALTER TABLE ACTIVIDAD
+  ADD CONSTRAINT FK_ACTIVIDAD_PERSONAL
+  FOREIGN KEY (responsable) REFERENCES PERSONAL (codigo_personal);
+
+ALTER TABLE OBSERVACION
+  ADD CONSTRAINT FK_OBSERVACION_PROYECTO
+  FOREIGN KEY (codigo_proy) REFERENCES PROYECTO (codigo_proy);
+
+ALTER TABLE ROLxENT_PER
+  ADD CONSTRAINT FK_ROLxENT_ROL_ESP
+  FOREIGN KEY (rol) REFERENCES ROL_ESP (codigo_rol);
+
+ALTER TABLE ROLxENT_PER
+  ADD CONSTRAINT FK_ROLxENT_ENTREGA
+  FOREIGN KEY (entrega) REFERENCES ENTREGA (codigo_entrega);
+
+ALTER TABLE ROLxENT_PER
+  ADD CONSTRAINT FK_ROLxENT_PER_PERSONAL
+  FOREIGN KEY (personal) REFERENCES PERSONAL (codigo_personal);
+
+ALTER TABLE CUENTA
+  ADD CONSTRAINT FK_CUENTA_PERSONAL
+  FOREIGN KEY (personal) REFERENCES PERSONAL (codigo_personal);
+
+
+
+Registros.
+
+Departamentos.
+insert into departamento values (cod_depart.nextval,'Amazonas');
+insert into departamento values (cod_depart.nextval,'Antioquia');
+insert into departamento values (cod_depart.nextval,'Arauca');
+insert into departamento values (cod_depart.nextval,'Atlantico');
+insert into departamento values (cod_depart.nextval,'Bolivar');
+insert into departamento values (cod_depart.nextval,'Boyaca');
+insert into departamento values (cod_depart.nextval,'Caldas');
+insert into departamento values (cod_depart.nextval,'Caqueta');
+insert into departamento values (cod_depart.nextval,'Casanare');
+insert into departamento values (cod_depart.nextval,'Cauca');
+insert into departamento values (cod_depart.nextval,'Cesar');
+insert into departamento values (cod_depart.nextval,'Choco');
+insert into departamento values (cod_depart.nextval,'Cordoba');
+insert into departamento values (cod_depart.nextval,'Cundinamarca');
+insert into departamento values (cod_depart.nextval,'Guainia');
+insert into departamento values (cod_depart.nextval,'Guaviare');
+insert into departamento values (cod_depart.nextval,'Huila');
+insert into departamento values (cod_depart.nextval,'La Guajira');
+insert into departamento values (cod_depart.nextval,'Magdalena');
+insert into departamento values (cod_depart.nextval,'Meta');
+insert into departamento values (cod_depart.nextval,'Nariño');
+insert into departamento values (cod_depart.nextval,'Norte de Santander');
+insert into departamento values (cod_depart.nextval,'Putumayo');
+insert into departamento values (cod_depart.nextval,'Quindio');
+insert into departamento values (cod_depart.nextval,'Risaralda');
+insert into departamento values (cod_depart.nextval,'San Andres y Providencia');
+insert into departamento values (cod_depart.nextval,'Santander');
+insert into departamento values (cod_depart.nextval,'Sucre');
+insert into departamento values (cod_depart.nextval,'Tolima');
+insert into departamento values (cod_depart.nextval,'Valle del Cauca');
+insert into departamento values (cod_depart.nextval,'Vaupes');
+insert into departamento values (cod_depart.nextval,'Vichada');
+insert into departamento values (cod_depart.nextval,'Putumayo');
+
+
+Ciudades.
+insert into ciudad values (cod_ciudad.nextval,'Cali',30);
+insert into ciudad values (cod_ciudad.nextval,'Buenaventura',30);
+
+Personal.
+insert into personal values (1,1151945740,'gustavo', 'ruiz',4476561, 3104537321, '09.ruiz@gmail.com',21, 'cra.2 #57-19', 2, 'Dir');
+
+Rol_Esp.
+insert into rol_esp values (1,'desarrollador junior', 5000)
+insert into rol_esp values (2,'desarrollador semi senior', 7000)
+insert into rol_esp values (3,'desarrollador senior', 10000)
+
+Cuentas.
+insert into cuenta values (1,'tavoruiz', 't4v0ru1z-d246bb1586160bf3c62c21b06057ce23');
+
+Categoria 
+
+insert into categoria_proyecto values (1,1,'Facil');
+insert into categoria_proyecto values (2,2,'Normal');
+insert into categoria_proyecto values (3,3,'Complejo');
+
+Secuencia.
+
+CREATE SEQUENCE cod_depart
+INCREMENT BY 1;
+
+CREATE SEQUENCE cod_ciudad
+INCREMENT BY 1;
+
+CREATE SEQUENCE cod_proy
+INCREMENT BY 1;
+
+CREATE SEQUENCE cod_ent
+INCREMENT BY 1;
+
+CREATE SEQUENCE cod_act
+INCREMENT BY 1;
+
+CREATE SEQUENCE cod_cli
+INCREMENT BY 1;
+
+CREATE SEQUENCE cod_per
+INCREMENT BY 2;
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                          
